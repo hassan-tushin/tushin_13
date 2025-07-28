@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+
+class ASS extends StatelessWidget {
+  const ASS({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: AppBar(
+          title: Text(" Greeting App"),
+        ),
+      ),
+      
+      body:Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Hello, World",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: Colors.red
+              ),
+            ),
+            Text("Welcome to Flutter !",
+
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            
+            Image.network("https://img.icons8.com/color/512/flutter.png",
+            height:200,
+            width: 200,),
+            SizedBox(
+              height: 10,
+            ),
+            
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green
+                ),
+
+                onPressed:(){
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Button Pressed ")));
+
+
+                  },
+                child:Text("Press me ",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.black
+            ),
+
+
+            ))
+
+        
+
+          ],
+        ),
+      ),
+    );
+  }
+}
